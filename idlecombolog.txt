@@ -1,0 +1,33 @@
+(2022-04-10 14:24:58) IdleCombos v2.00 started.
+(2022-04-10 14:24:58) Settings file "idlecombosettings.json" created.
+(2022-04-10 14:25:01) User ID: 648963 & Hash: ef82eb2e83476f9d96d5a2abaa272d37 detected in WRL.
+(2022-04-10 14:25:01) IdleCombos setup completed.
+(2022-04-10 14:25:07) IdleCombos v2.00 started.
+(2022-04-10 14:25:11) IdleCombos v2.00 started.
+(2022-04-10 14:36:40) IdleCombos v2.00 started.
+(2022-04-10 15:01:45) IdleCombos v2.00 started.
+(2022-04-10 15:04:52) IdleCombos v2.00 started.
+(2022-04-10 15:05:01) IdleCombos v2.00 started.
+(2022-04-10 15:05:09) IdleCombos v2.00 started.
+(2022-04-10 15:05:16) IdleCombos v2.00 started.
+(2022-04-10 15:07:11) IdleCombos v2.00 started.
+(2022-04-10 15:10:04) IdleCombos v2.00 started.
+(2022-04-10 15:10:10) IdleCombos v2.00 started.
+(2022-04-10 15:20:33) IdleCombos v2.00 started.
+(2022-04-10 15:22:14) IdleCombos v2.00 started.
+(2022-04-10 15:22:52) IdleCombos v2.00 started.
+(2022-04-10 15:25:55) IdleCombos v2.00 started.
+(2022-04-10 15:34:07) IdleCombos v2.00 started.
+(2022-04-10 15:37:35) IdleCombos v2.00 started.
+(2022-04-10 15:37:51) IdleCombos v2.00 started.
+(2022-04-10 15:41:09) IdleCombos v2.00 started.
+(2022-04-10 15:42:43) Server request: "getuserdetails"
+(2022-04-10 15:42:47) Server request: "setcurrentobjective"
+(2022-04-10 15:42:49) Server request: "getuserdetails"
+(2022-04-10 15:49:09) IdleCombos v2.00 started.
+(2022-04-10 15:50:05) IdleCombos v2.00 started.
+(2022-04-10 15:52:00) IdleCombos v2.00 started.
+(2022-04-10 15:52:15) IdleCombos v2.00 started.
+(2022-04-10 16:03:44) IdleCombos v2.00 started.
+(2022-04-10 16:14:38) IdleCombos v2.00 started.
+(2022-04-10 16:23:38) IdleCombos v2.00 started.
