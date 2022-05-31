@@ -9,7 +9,7 @@ class IC_GameManagerEGS_Class
 
     GetVersion()
     {
-        return "v1.9.15, 2022-04-09, IC v0.425.1+, EGS"
+        return "v1.9.16, 2022-04-09, IC v0.428+, EGS"
     }
 
     is64Bit()
@@ -40,7 +40,7 @@ class IC_GameManagerEGS_Class
         this.Game.BaseAddress := this.BaseAddress
         this.Game.GameUser := New GameObjectStructure(this.Game,, [0xA8])
         this.Game.GameInstance := New GameObjectStructure(this.Game,, [0xB0, 0x10, 0x20])         ; Push - GameInstances._items.Item[0]
-        this.Game.GameInstance.TimeScales := New GameObjectStructure(this.Game.GameInstance,, [0xF0])
+        this.Game.GameInstance.TimeScales := New GameObjectStructure(this.Game.GameInstance,, [0xF8])
         this.Game.GameInstance.Controller := New GameObjectStructure(this.Game.GameInstance,, [0x18])
         this.Game.GameInstance.ResetHandler := New GameObjectStructure(this.Game.GameInstance,, [0x38])
         this.Game.GameInstance.Controller.UserData := New GameObjectStructure(this.Game.GameInstance.Controller,, [0xA0])
@@ -83,7 +83,7 @@ class IC_GameManagerEGS_Class
         ;=========================================
         this.Game.GameInstance.ClickLevel := New GameObjectStructure(this.Game.GameInstance,, [0x118])
         this.Game.GameStarted := New GameObjectStructure(this.Game, "Char", [0xF8])
-        this.Game.GameInstance.ResetsSinceLastManual := New GameObjectStructure(this.Game.GameInstance,, [0x104])
+        this.Game.GameInstance.ResetsSinceLastManual := New GameObjectStructure(this.Game.GameInstance,, [0x10C])
         this.Game.GameInstance.instanceLoadTimeSinceLastSave := New GameObjectStructure(this.Game.GameInstance,, [0x10C])
         this.Game.GameInstance.Controller.Area := New GameObjectStructure(this.Game.GameInstance.Controller,, [0x18])
         this.Game.GameInstance.Controller.Area.Active := New GameObjectStructure(this.Game.GameInstance.Controller.Area, "Char", [0x1E0])
@@ -115,7 +115,7 @@ class IC_GameManagerEGS_Class
         this.Game.GameInstance.Controller.UserData.HeroHandler.HeroList := New GameObjectStructure(this.Game.GameInstance.Controller.UserData.HeroHandler,"List", [0x18, 0x10]) ;Push heroes._items
         this.Game.GameInstance.Controller.UserData.HeroHandler.HeroList.def := New GameObjectStructure(this.Game.GameInstance.Controller.UserData.HeroHandler.HeroList,, [0x18])
         this.Game.GameInstance.Controller.UserData.HeroHandler.HeroList.def.Name := New GameObjectStructure(this.Game.GameInstance.Controller.UserData.HeroHandler.HeroList.def, "UTF-16", [0x30, 0x14]) ;Push Name, Value v417
-        this.Game.GameInstance.Controller.UserData.HeroHandler.HeroList.def.Seat := New GameObjectStructure(this.Game.GameInstance.Controller.UserData.HeroHandler.HeroList.def,, [0x178]) ; Push SeatID ;v417
+        this.Game.GameInstance.Controller.UserData.HeroHandler.HeroList.def.Seat := New GameObjectStructure(this.Game.GameInstance.Controller.UserData.HeroHandler.HeroList.def,, [0x180]) ; Push SeatID ;v417
         this.Game.GameInstance.Controller.UserData.HeroHandler.HeroList.effects := New GameObjectStructure(this.Game.GameInstance.Controller.UserData.HeroHandler.HeroList,, [0x80])
         this.Game.GameInstance.Controller.UserData.HeroHandler.HeroList.effects.effectKeysByKeyName := New GameObjectStructure(this.Game.GameInstance.Controller.UserData.HeroHandler.HeroList.effects, "List", [0x58, 0x18]) ;Push effectKeysByKeyName, entries
         this.Game.GameInstance.Controller.UserData.HeroHandler.HeroList.effects.effectKeysByKeyNameCount := New GameObjectStructure(this.Game.GameInstance.Controller.UserData.HeroHandler.HeroList.effects,, [0x58, 0x40]) ;Push effectKeysByKeyName, count
@@ -154,7 +154,7 @@ class IC_GameManagerEGS_Class
         this.Game.GameInstance.ActiveCampaignData.CurrentAreaID := New GameObjectStructure(this.Game.GameInstance.ActiveCampaignData,, [0x88])
         this.Game.GameInstance.ActiveCampaignData.HighestAvailableAreaID := New GameObjectStructure(this.Game.GameInstance.ActiveCampaignData,, [0x90])
         this.Game.GameInstance.ActiveCampaignData.Gold := New GameObjectStructure(this.Game.GameInstance.ActiveCampaignData, "Int64", [0x258])
-        this.Game.GameInstance.ActiveCampaignData.GoldExp := New GameObjectStructure(this.Game.GameInstance.ActiveCampaignData, "Int64", [0x260])
+        this.Game.GameInstance.ActiveCampaignData.GoldExp := New GameObjectStructure(this.Game.GameInstance.ActiveCampaignData, "Int64", [0x260]) ; Exponent for gold. It is part of the Gold variable.
         ;===================================
         ;Formation save related memory reads
         ;===================================
@@ -202,7 +202,7 @@ class IC_GameManagerEGS_Class
         this.Game.GameInstance.Screen := New GameObjectStructure(this.Game.GameInstance,, [0x10])
         this.Game.GameInstance.Screen.uiController := New GameObjectStructure(this.Game.GameInstance.Screen,, [0x3A8])
         this.Game.GameInstance.Screen.uiController.topBar := New GameObjectStructure(this.Game.GameInstance.Screen.uiController,, [0x18])
-        this.Game.GameInstance.Screen.uiController.topBar.objectiveProgressBox := New GameObjectStructure(this.Game.GameInstance.Screen.uiController.topBar,, [0x368])
+        this.Game.GameInstance.Screen.uiController.topBar.objectiveProgressBox := New GameObjectStructure(this.Game.GameInstance.Screen.uiController.topBar,, [0x348])
         this.Game.GameInstance.Screen.uiController.topBar.objectiveProgressBox.areaBar := New GameObjectStructure(this.Game.GameInstance.Screen.uiController.topBar.objectiveProgressBox,, [0x380])
         this.Game.GameInstance.Screen.uiController.topBar.objectiveProgressBox.areaBar.autoProgressButtonToggled := New GameObjectStructure(this.Game.GameInstance.Screen.uiController.topBar.objectiveProgressBox.areaBar, "Char", [0x350, 0x3A2]) ; Push autoProgressButton.toggled
         this.Game.GameInstance.Screen.uiController.bottomBar := New GameObjectStructure(this.Game.GameInstance.Screen.uiController,, [0x20])

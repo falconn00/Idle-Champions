@@ -26,7 +26,7 @@ class IC_GameManager_Class
 
     GetVersion()
     {
-        return "v1.10.10, 2022-04-09, IC v0.425.1+, Steam"
+        return "v1.10.11, 2022-04-16, IC v0.430+, Steam"
     }
 
     is64Bit()
@@ -55,7 +55,7 @@ class IC_GameManager_Class
         this.Game.BaseAddress := this.BaseAddress
         this.Game.GameUser := New GameObjectStructure(this.Game,, [0x54])
         this.Game.GameInstance := New GameObjectStructure(this.Game,, [0x58, 0x8, 0x10])         ; Push - GameInstances._items.Item[0]
-        this.Game.GameInstance.TimeScales := New GameObjectStructure(this.Game.GameInstance,, [0x78])
+        this.Game.GameInstance.TimeScales := New GameObjectStructure(this.Game.GameInstance,, [0x7C])
         this.Game.GameInstance.Controller := New GameObjectStructure(this.Game.GameInstance,, [0xC])
         this.Game.GameInstance.ResetHandler := New GameObjectStructure(this.Game.GameInstance,, [0x1C])
         this.Game.GameInstance.Controller.UserData := New GameObjectStructure(this.Game.GameInstance.Controller,, [0x50])
@@ -100,7 +100,7 @@ class IC_GameManager_Class
         ;=========================================
         this.Game.GameInstance.ClickLevel := New GameObjectStructure(this.Game.GameInstance,, [0x98])
         this.Game.GameStarted := New GameObjectStructure(this.Game, "Char", [0x7C])
-        this.Game.GameInstance.ResetsSinceLastManual := New GameObjectStructure(this.Game.GameInstance,, [0x84])
+        this.Game.GameInstance.ResetsSinceLastManual := New GameObjectStructure(this.Game.GameInstance,, [0x88])
         this.Game.GameInstance.instanceLoadTimeSinceLastSave := New GameObjectStructure(this.Game.GameInstance,, [0x8C])
         this.Game.GameInstance.Controller.Area := New GameObjectStructure(this.Game.GameInstance.Controller,, [0xC])
         this.Game.GameInstance.Controller.Area.Active := New GameObjectStructure(this.Game.GameInstance.Controller.Area, "Char", [0xF4]) 
@@ -201,7 +201,7 @@ class IC_GameManager_Class
         this.Game.GameInstance.Controller.Formation.FormationList := New GameObjectStructure(this.Game.GameInstance.Controller.Formation,"List", [0xC, 0x8]) ; Push slots._Items
         this.Game.GameInstance.Controller.Formation.FormationListSize := New GameObjectStructure(this.Game.GameInstance.Controller.Formation,, [0xC, 0xC]) ; Push _size
         this.Game.GameInstance.Controller.Formation.FormationList.ChampID := New GameObjectStructure(this.Game.GameInstance.Controller.Formation.FormationList,, [0x14, 0xC, 0x8]) ; Push hero.def.ID
-        this.Game.GameInstance.Controller.Formation.FormationList.HeroAlive := New GameObjectStructure(this.Game.GameInstance.Controller.Formation.FormationList,, [0x151])
+        this.Game.GameInstance.Controller.Formation.FormationList.HeroAlive := New GameObjectStructure(this.Game.GameInstance.Controller.Formation.FormationList,, [0x149])
         this.Game.GameInstance.Controller.Formation.TransitionOverrides := New GameObjectStructure(this.Game.GameInstance.Controller.Formation,, [0x54]) ;this is a dict
         ;ActionListSize is a count of how many transition overrides have been added to the action list within the dictionary TransitionOverrides.
         ;When this value increases from 0 to 1 a briv jump animation can occur. It is possible a future transtiion override occurs increasing the Count
@@ -228,7 +228,7 @@ class IC_GameManager_Class
         this.Game.GameInstance.Screen := New GameObjectStructure(this.Game.GameInstance,, [0x8])
         this.Game.GameInstance.Screen.uiController := New GameObjectStructure(this.Game.GameInstance.Screen,, [0x270])
         this.Game.GameInstance.Screen.uiController.topBar := New GameObjectStructure(this.Game.GameInstance.Screen.uiController,, [0xC])
-        this.Game.GameInstance.Screen.uiController.topBar.objectiveProgressBox := New GameObjectStructure(this.Game.GameInstance.Screen.uiController.topBar,, [0x24C])
+        this.Game.GameInstance.Screen.uiController.topBar.objectiveProgressBox := New GameObjectStructure(this.Game.GameInstance.Screen.uiController.topBar,, [0x23C])
         this.Game.GameInstance.Screen.uiController.topBar.objectiveProgressBox.areaBar := New GameObjectStructure(this.Game.GameInstance.Screen.uiController.topBar.objectiveProgressBox,, [0x258])
         this.Game.GameInstance.Screen.uiController.topBar.objectiveProgressBox.areaBar.autoProgressButtonToggled := New GameObjectStructure(this.Game.GameInstance.Screen.uiController.topBar.objectiveProgressBox.areaBar, "Char", [0x240, 0x27A]) ; Push autoProgressButton.toggled
         this.Game.GameInstance.Screen.uiController.bottomBar := New GameObjectStructure(this.Game.GameInstance.Screen.uiController,, [0x10])
