@@ -306,3 +306,5 @@
 (2022-05-31 06:01:50) Server request: "setcurrentobjective"
 (2022-05-31 06:01:52) Server request: "getuserdetails"
 (2022-05-31 06:22:37) IdleCombos v2.00 started.
+(2022-05-31 06:27:32) IdleCombos v2.00 started.
+(2022-05-31 06:29:56) IdleCombos v2.00 started.
