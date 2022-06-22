@@ -329,6 +329,27 @@ class IC_MemoryFunctions_Class
         newString := newString . "IdleDragons_Data\StreamingAssets\downloaded_files\webRequestLog.txt"
         return newString
     }
+
+    ReadGameLocation()
+    {
+        return this.GameManager.Main.GetModuleFileNameEx()
+    }
+
+    GetWebRequestLogLocation()
+    {
+        gameLoc := this.ReadGameLocation()
+        splitStringArray := StrSplit(gameLoc, "\")
+        newString := ""
+        i := 1
+        size := splitStringArray.Count() - 1
+        loop, %size%
+        {
+            newString := newString . splitStringArray[i] . "\"
+            i++
+        }
+        newString := newString . "IdleDragons_Data\StreamingAssets\downloaded_files\webRequestLog.txt"
+        return newString
+    }
     
     
     ;==================================================
