@@ -86,6 +86,8 @@ class IC_ActiveEffectKeyHandler_Class
         effectName := this.HeroEffectNames[handlerName]
         tempObject := g_SF.Memory.GameManager.game.gameInstances.Controller.userData.HeroHandler.heroes.effects.effectKeysByKeyName.size.GetGameObjectFromListValues(0, g_SF.Memory.GetHeroHandlerIndexByChampID(ChampID))
         dictCount := g_SF.Memory.GenericGetValue(tempObject)
+        if(dictCount > 100 OR dictCount < 0) ; skip the loop if the value is clearly unreasonable to prevent freezes.
+            return -1 
         i := 0
         loop, % dictCount
         {
@@ -181,10 +183,10 @@ class ActiveEffectKeySharedFunctions
                 return g_SF.Memory.GenericGetValue(g_SF.Memory.ActiveEffectKeyHandler.OminContractualObligationsHandler.obligationsFufilled)
             }
 
-            ReadSecondsOnGoldFind()
-            {
-                return g_SF.Memory.GenericGetValue(g_SF.Memory.ActiveEffectKeyHandler.OminContractualObligationsHandler.secondsOnGoldFind)
-            }
+            ; ReadSecondsOnGoldFind()
+            ; {
+            ;     return g_SF.Memory.GenericGetValue(g_SF.Memory.ActiveEffectKeyHandler.OminContractualObligationsHandler.secondsOnGoldFind)
+            ; }
         }
     }
 
